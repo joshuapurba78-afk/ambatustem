@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ignited by Truth - Portfolio</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .hero-section {
+            width: 100%;
+            min-height: 100vh;
+            background: radial-gradient(circle at center, #112d17 0%, #061108 100%);
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 80px;
+        }
+
+        .logo a {
+            font-size: 24px;
+            font-weight: bold;
+            color: #76ff03;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #76ff03;
+        }
+
+        .hero-container {
+            display: flex;
+            flex: 1;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 80px 50px 80px;
+        }
+
+        .hero-left {
+            max-width: 50%;
+        }
+
+        .hero-left h3 {
+            color: #76ff03;
+            font-size: 18px;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .hero-left h1 {
+            font-size: 56px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-left p {
+            color: #a0aab0;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .btn-download {
+            display: inline-block;
+            background-color: #76ff03;
+            color: #061108;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            box-shadow: 0 0 15px rgba(118, 255, 3, 0.4);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-download:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 25px rgba(118, 255, 3, 0.7);
+        }
+
+        .hero-right {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 45%;
+        }
+
+        .image-frame {
+            width: 380px;
+            height: 380px;
+            border-radius: 50%;
+            border: 8px solid #204d27;
+            box-shadow: 0 0 30px rgba(118, 255, 3, 0.2);
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #112d17;
+        }
+
+        .image-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hero-section">
+        <header id="header">
+            <div class="logo">
+                <a href="#">Logo</a>
+            </div>
+            <div class="nav-links">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+                <a href="#">Login</a>
+            </div>
+        </header>
+
+        <div class="hero-container">
+            <div class="hero-left">
+                <h3>Ignited by Truth</h3>
+                <h1>The Peepzz</h1>
+                <p>son tau mau ketik apa.</p>
+                <a href="galeri.html" class="btn-download">SEE US</a>
+            </div>
+
+            <div class="hero-right">
+                <div class="image-frame">
+                    <img src="orang-ganteng-dari-soe.jpeg" alt="Profile Picture">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
