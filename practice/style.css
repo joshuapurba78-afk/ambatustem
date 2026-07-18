@@ -1,0 +1,781 @@
+/* Base Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: radial-gradient(circle at center, #125222 0%, #051f0f 70%, #000000 100%);
+    background-attachment: fixed;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+/* Accent Color Variable */
+:root {
+    --accent-color: #8cff00;
+}
+
+/* Header & Navigation */
+header {
+    position: fixed;
+    top: 20px;
+    left: 50%;                 /* FIX: Changed from 50px to 50% to properly align anchoring point */
+    transform: translateX(-50%); /* Centers the header perfectly dynamically */
+    width: 90%;
+    max-width: 1200px;
+    z-index: 1000;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 2.5rem;
+    background-color: rgba(18, 5, 25, 0.85); 
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
+}
+
+/* FIX: Add this class right under the header block to format the link collection */
+.nav-list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+.nav-list a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 0.5rem; 
+    padding: 8px 16px;
+    /* FIX: Added a transparent border so the layout doesn't jump when the marker activates */
+    border: 1.5px solid transparent; 
+    border-radius: 30px;
+    font-size: 1rem;
+    transition: 0.3s;
+    display: inline-block;
+}
+/* FIX: This now strictly activates the neon outline capsule only for the single active page class */
+.nav-list a.active {
+    border-color: var(--accent-color) !important;
+    background-color: rgba(140, 255, 0, 0.05) !important;
+    color: var(--accent-color) !important;
+    font-weight: 600;
+    box-shadow: inset 0 0 10px rgba(140, 255, 0, 0.1);
+}
+
+.nav-list a:hover:not(.active) {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--accent-color);
+}
+
+.btn-login {
+    background-color: var(--accent-color); 
+    color: #000000;            
+    padding: 8px 20px; /* Adjusted to match structural link sizing */         
+    border-radius: 30px; /* Changed from 5px to 30px to match the pill theme! */       
+    text-decoration: none;     
+    font-weight: bold;
+    margin-left: 1.5rem;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+.btn-login:hover {
+    opacity: 0.8;
+}
+#click, .mainicon {
+    display: none;
+}
+
+/* Main Content Area */
+.main {
+    display: flex;
+    flex-direction: column;   /* Stacks elements vertically */
+    justify-content: center;
+    align-items: center;       /* Centers everything horizontally */
+    text-align: center;        /* Centers your text alignments */
+    padding: 10rem 10% 5rem 10%; 
+    min-height: 100vh;
+    gap: 1.5rem;               /* Tight spacing between name, image, and description */
+}
+
+/* New layout rule for the detached name heading line at the top */
+.hero-name {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.information {
+    max-width: 700px;          /* Cleans up paragraphs width for simple reading */
+    margin-top: 1rem;          /* Adds breathing room below the image container */
+}
+.information h3 {
+    font-size: 2rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.information p {
+    color: #cccccc;
+    margin-bottom: 2rem;
+}
+
+/* Social Icons */
+.social {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;   /* Centers the circle buttons row horizontally */
+}
+
+.social a {
+    color: var(--accent-color);
+    font-size: 1.5rem;
+    margin: 0 0.75rem;         /* Splits the space evenly on left and right for absolute center symmetry */
+    text-decoration: none;
+    border: 2px solid var(--accent-color);
+    padding: 0.5rem 0.8rem;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.social a:hover {
+    background-color: var(--accent-color);
+    color: #080808;
+}
+
+/* Download CV Button */
+.cv {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: #080808;
+    padding: 0.8rem 2rem;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.cv:hover {
+    box-shadow: 0 0 15px var(--accent-color);
+}
+
+/* Profile Image Container Layout */
+
+
+
+/* Subtle hovering animation effect */
+
+
+
+/* ==========================================
+   Login Page Specific Styles 
+   ========================================== */
+.login-body {
+    background-color: #0b2e1f; 
+    display: flex;
+    flex-direction: column; /* Forces header to the top and card below it */
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+/* Adds a bit of space to push the card down beautifully below the header */
+.login-body .login-card {
+    margin: auto 0; 
+}
+
+.login-card {
+    background-color: #1c1c1e; 
+    padding: 40px 30px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.login-card h2 {
+    color: #ffffff;
+    margin: 20px 0 5px 0;
+    font-size: 1.5rem;
+}
+
+.login-card .subtitle {
+    color: #a1a1aa;
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+}
+
+/* Profile Image Container Layout */
+
+
+/* --- Desain Sisi Kiri (Teks) --- */
+.hero-text {
+    display: flex;
+    flex-direction: column;        /* Menyusun teks berurutan ke bawah */
+    gap: 12px;                     /* Mengatur jarak konsisten antar baris teks */
+    max-width: 550px;
+}
+
+.hero-text .sub-title {
+    color: #00ff00;               /* Warna hijau terang khas logo Anda */
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.hero-text .main-title {
+    color: #ffffff;
+    font-size: 3.8rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.hero-text .description {
+    color: #a0a0a0;               /* Warna abu-abu redup agar kontras */
+    font-size: 1.05rem;
+    margin-bottom: 15px;
+}
+
+/* Tombol About Me */
+.btn-about {
+    display: inline-block;
+    width: fit-content;
+    padding: 12px 28px;
+    background-color: #00ff00;
+    color: #000000;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 25px;
+    box-shadow: 0 4px 15px rgba(0, 255, 0, 0.3);
+}
+
+/* --- Desain Sisi Kanan (Logo Bulat) --- */
+
+
+
+.hero-container {
+    display: flex;
+    justify-content: center;       /* Memposisikan konten di tengah */
+    align-items: center;
+    gap: 5px;                     /* KUNCI: Memberikan jarak horizontal pasti sebesar 80px di antara teks dan logo */
+    max-width: 1200px;
+    margin: 100px auto 0 auto;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 400px;             /* Memberikan dorongan jarak dari sisi kiri logo */
+}
+
+/* 1. Mengatur kelompok teks kiri dan memperkecil gap vertikalnya */
+.hero-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;                      /* DIKECILKAN: Mengurangi jarak renggang antar baris teks */
+    max-width: 50%;                /* Sedikit dilonggarkan agar teks muat satu baris */
+    text-align: left;
+}
+
+/* 2. Mengecilkan ukuran font "Web Developer" */
+.hero-text .main-title {
+    color: #ffffff;
+    font-size: 2.8rem;             /* DIKECILKAN: Dari awalnya ~3.8rem menjadi 2.8rem agar pas */
+    font-weight: bold;
+    margin: 0;                     /* Memastikan tidak ada margin bawaan h1 yang bikin renggang */
+    line-height: 1.2;              /* Mengatur tinggi baris agar teks proporsional */
+}
+
+/* 3. Menyesuaikan teks lainnya jika diperlukan */
+.hero-text .sub-title {
+    color: #00ff00;
+    font-size: 1.1rem;             /* Sedikit disesuaikan */
+    margin: 0;
+}
+
+.hero-text .description {
+    color: #a0a0a0;
+    font-size: 0.95rem;            /* Sedikit disesuaikan */
+    margin-top: 4px;               /* Kontrol jarak khusus ke deskripsi */
+    margin-bottom: 15px;           /* Jarak sebelum tombol See Me */
+}
+
+.hero-text .main-title {
+    color: #ffffff;
+    font-size: 2.8rem;
+    font-weight: bold;
+    margin: 0;}
+
+    .hero-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    
+    /* Setel ke min-content atau persentase yang lebih longgar */
+    width: max-content; /* Membuat lebar kontainer mengikuti panjang tulisan asli */
+    max-width: 55%;     /* Memberikan batas maksimal yang aman */
+}
+
+/* 1. Berikan ruang yang cukup pada kontainer teks agar tidak memotong kata */
+.hero-text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: max-content;   /* KUNCI: Membuat lebar kontainer mengikuti panjang tulisan */
+    max-width: 60%;       /* KUNCI: Memperluas batas maksimal ruang teks hingga 60% halaman */
+    text-align: left;
+    position: relative;
+    right: 30px;
+    transform: translateX(-40px);
+}
+
+/* 2. Kunci elemen judul agar teks tidak bisa melakukan 'enter' otomatis */
+.hero-text h1, 
+.hero-text .main-title { 
+    color: #ffffff;
+    font-size: 3.5rem;    /* Sesuaikan ukuran font yang Anda inginkan */
+    font-weight: bold;
+    margin: 0;
+    
+    white-space: nowrap;  /* KUNCI UTAMA: Melarang keras teks turun ke bawah atau enter otomatis */
+}
+
+/* Profile Image Container Layout */
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;           /* Gives the circular rings full room to display centered */
+}
+
+/* Base style for the structural glow rings */
+.glow-ring {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: all 0.5s ease-in-out;
+}
+
+/* Outer Ring Style & Glow Effect */
+.outer-ring {
+    width: 380px;
+    height: 380px;
+    border: 4px solid rgba(140, 255, 0, 0.15);
+    background: radial-gradient(circle, rgba(140, 255, 0, 0.05) 0%, transparent 70%);
+    box-shadow: 0 0 30px rgba(140, 255, 0, 0.2),
+                inset 0 0 30px rgba(140, 255, 0, 0.1);
+}
+
+/* Inner Accent Ring Style & Neon Stroke */
+.inner-ring {
+    width: 330px;
+    height: 330px;
+    border: 8px solid var(--accent-color);
+    box-shadow: 0 0 25px var(--accent-color),
+                inset 0 0 25px var(--accent-color);
+    padding: 5px;
+    background-color: #080808;
+}
+
+/* Profile Picture Cropping & Rendering */
+.inner-ring img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    background-color: #111;
+}
+
+/* Subtle hovering animation effect */
+.outer-ring:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 45px rgba(140, 255, 0, 0.4),
+                inset 0 0 45px rgba(140, 255, 0, 0.2);
+}
+
+/* Pertama, pastikan container lingkarannya diatur ukurannya */
+.glow-ring {
+    width: 380px;                  /* Mengunci ukuran lebar lingkaran (sesuaikan dengan kode Anda sebelumnya) */
+    height: 380px;                 /* Mengunci ukuran tinggi lingkaran */
+    border-radius: 50%;            /* Membuat bentuknya bulat sempurna */
+    border: 3px solid rgba(0, 255, 0, 0.4); /* Garis lingkar hijau tipis */
+    box-shadow: 0 0 40px rgba(0, 255, 0, 0.25); /* Efek lingkaran bersinar/glowing */
+    overflow: hidden;              /* KUNCI 1: Memotong bagian gambar yang keluar dari lingkaran */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Kedua, tambahkan target khusus untuk tag <img> di dalamnya */
+.glow-ring img {
+    width: 100%;                   /* KUNCI 2: Memaksa lebar gambar mengikuti 100% lebar lingkaran */
+    height: 100%;                  /* KUNCI 3: Memaksa tinggi gambar mengikuti 100% tinggi lingkaran */
+    object-fit: cover;             /* KUNCI UTAMA: Gambar akan dipotong proporsional agar pas di dalam lingkaran tanpa gepeng */
+    border-radius: 50%;            /* Opsional, tapi baik untuk memastikan bulatan yang rapi */
+}
+
+/* Keadaan Default (Normal) */
+.glow-ring {
+    width: 380px;                  /* Ukuran lingkaran Anda */
+    height: 380px;                 
+    border-radius: 50%;            /* Membuat bulat sempurna */
+    border: 4px solid #00ff00;     /* Garis tepi hijau terang */
+    overflow: hidden;              /* Memotong gambar agar tetap bulat */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;               /* Mengubah kursor jadi telunjuk saat menyentuh */
+
+    /* KUNCI 1: Efek Glow Hijau di awal */
+    box-shadow: 0 0 25px rgba(0, 255, 0, 0.6), 
+                inset 0 0 15px rgba(0, 255, 0, 0.4);
+
+    /* KUNCI 2: Transition membuat efek gerakannya mulus/smooth dan tidak kaku */
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Pastikan gambar di dalamnya juga responsif */
+.glow-ring img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: transform 0.2s ease; /* Membuat gambar ikut membesar dengan mulus */
+}
+
+
+/* Area Hover: Efek saat disentuh Kursor */
+.glow-ring:hover {
+    /* KUNCI 3: Efek Zoom sedikit (1.05 berarti membesar 5% dari ukuran asli) */
+    transform: scale(1.025);
+    /* KUNCI 4: Membuat efek pendaran cahayanya makin terang saat disentuh */
+    box-shadow: 0 0 45px rgba(0, 255, 0, 0.9), 
+                0 0 20px rgba(0, 255, 0, 0.4);
+}
+/* Reset dasar untuk margin dan padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+/* --- STYLE KHUSUS HALAMAN LOGIN --- */
+
+/* Membuat pembungkus memenuhi layar dan memaksa kontennya berada di core/tengah */
+.login-wrapper {
+    width: 100%;
+    min-height: 100vh;
+    background: radial-gradient(circle, #0a2f1d 0%, #020f08 100%); /* Latar belakang hijau gelap */
+    display: flex;
+    justify-content: center; /* Membawa kotak ke tengah secara horizontal */
+    align-items: center;    /* Membawa kotak ke tengah secara vertikal */
+    padding: 20px;
+}
+
+/* Membuat form memiliki wadah kotak putih seperti gambar contoh */
+.login-box {
+    background-color: #ffffff; /* Warna latar kotak putih bersih */
+    width: 100%;
+    max-width: 400px;          /* Batas lebar kotak login */
+    padding: 40px;
+    border-radius: 12px;       /* Sudut membulat halus */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4); /* Efek bayangan tegas agar timbul */
+    text-align: center;
+}
+
+/* Mengatur Judul LOGIN di dalam kotak */
+.login-box h2 {
+    color: #000000;            /* Mengubah warna teks LOGIN menjadi hitam */
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    font-family: sans-serif;
+}
+
+/* Mengatur Baris Input (Label & Kotak Ketik) */
+.login-box .input-group {
+    display: flex;
+    flex-direction: column;    /* Label di atas, box input di bawahnya */
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.login-box .input-group label {
+    color: #333333;            /* Warna label abu-abu gelap */
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+}
+
+.login-box .input-group input {
+    padding: 10px;
+    border: 1px solid #cccccc; /* Garis tepi kotak ketik */
+    border-radius: 6px;
+    outline: none;
+    font-size: 1rem;
+    color: #000000;            /* Warna teks ketikan hitam */
+    background-color: #ffffff;
+}
+
+/* Efek saat kolom input diklik */
+.login-box .input-group input:focus {
+    border-color: #00ff00;     /* Berubah hijau saat aktif */
+}
+
+/* Pengaturan Link Bawah */
+.login-box .form-footer {
+    text-align: left;
+    margin-bottom: 25px;
+}
+
+.login-box .forgot-link {
+    color: #3b82f6;            /* Warna biru link */
+    font-size: 0.85rem;
+    text-decoration: underline;
+}
+
+/* Tombol Sign In Hijau Neon */
+.login-box .btn-submit {
+    width: 100%;
+    padding: 12px;
+    background-color: #00ff00; /* Warna hijau menyala sesuai tema web Anda */
+    color: #000000;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.2s ease;
+}
+
+.login-box .btn-submit:hover {
+    background-color: #00cc00; /* Sedikit meredup saat kursor menempel */
+}
+
+/* Mengatur jarak div social di bawah tombol */
+.social {
+    margin-top: 2rem; /* Memberikan jarak dari tombol Download CV */
+    display: flex;
+    gap: 1.5rem;      /* Jarak antar ikon */
+}
+
+/* Mengatur tampilan ikon agar berbentuk lingkaran neon hijau */
+.social a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #00ff00; /* Warna hijau neon sesuai tema website kamu */
+    border-radius: 50%;
+    color: #00ff00;
+    font-size: 20px;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+/* Efek hover saat kursor diarahkan ke logo */
+
+
+/* 1. Mengatur Posisi Kontainer Ikon */
+.social {
+    margin-top: 30px;    /* Memberikan jarak vertikal di bawah tombol Download CV */
+    margin-bottom: 20px; /* Jarak ke elemen di bawahnya jika ada */
+    display: flex;       /* Membuat ikon berjejer ke samping */
+    gap: 20px;           /* Jarak antar ikon (Instagram dan GitHub) */
+}
+
+/* 2. Mengatur Tampilan Lingkaran & Ikon */
+.social a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;         /* Lebar lingkaran */
+    height: 45px;        /* Tinggi lingkaran */
+    background: transparent;
+    border: 2px solid #00ff00; /* Warna lingkaran hijau neon */
+    border-radius: 50%;  /* Membuat bentuknya bulat sempurna */
+    color: #00ff00;      /* Warna ikon di dalam lingkaran */
+    font-size: 22px;     /* Ukuran logo Instagram & GitHub */
+    text-decoration: none;
+    transition: 0.3s ease; /* Efek halus saat kursor menyentuh ikon */
+}
+
+/* 3. Efek Hover (Saat Kursor Diarahkan ke Ikon) */
+.social a:hover {
+    background: #00ff00;       /* Mengubah background menjadi hijau penuh */
+    color: #0a1108;            /* Mengubah warna logo menjadi gelap saat di-hover */
+    box-shadow: 0 0 15px #00ff00; /* Efek cahaya neon menyala */
+    transform: translateY(-5px);  /* Efek sedikit terangkat ke atas */
+}
+
+/* Kontainer utama pembungkus teks dan foto */
+.hero-container {
+  display: flex;
+  justify-content: space-between; /* Membuat konten terpisah ke ujung kiri dan kanan */
+  align-items: center;         /* Membuat teks dan foto sejajar secara vertikal di tengah */
+  padding: 50px 8%;            /* Memberi jarak/ruang di dalam kontainer */
+  min-height: 80vh;            /* Mengatur tinggi area agar proporsional */
+  gap: 40px;                   /* Memberi jarak aman antara teks dan foto agar tidak tabrakan */
+  padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 8%;  
+    padding-right: 14%;
+}
+
+/* Mengatur lebar area teks di kiri */
+.hero-content {
+  flex: 1;
+  max-width: 600px;
+}
+
+/* Mengatur tampilan foto bulat bersinar di kanan */
+.hero-image img {
+  width: 350px;                /* Sesuaikan ukuran foto */
+  height: 350px;
+  border-radius: 50%;          /* Membuat foto jadi bulat sempurna */
+  object-fit: cover;           /* Agar foto tidak gepeng */
+  border: 4px solid #00ff00;   /* Garis pinggir hijau menyala */
+  box-shadow: 0 0 25px #00ff00;/* Efek glow/sinar hijau */
+}
+
+/* Kontainer Utama (Tempat Teks & Foto) */
+.hero-container {
+  display: flex;
+  justify-content: space-between; /* Memisahkan konten ke ujung kiri dan kanan */
+  align-items: center;            /* Membuat foto dan teks sejajar vertikal secara sempurna */
+  
+  /* Sesuaikan padding kiri-kanan (8%) agar sejajar dengan batas logo di navbar */
+  padding: 80px 8% 120px 8%;     
+  
+  min-height: calc(100vh - 80px); /* Memanfaatkan sisa tinggi layar setelah dikurangi navbar */
+  gap: 50px;                      /* Jarak aman di tengah agar tidak tabrakan */
+  box-sizing: border-box;
+}
+
+/* Bagian Teks di Kiri */
+.hero-content {
+  flex: 1;
+  max-width: 550px;               /* Membatasi lebar teks agar proporsional */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+ 
+}
+
+
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;          
+     /* Gives the circular rings full room to display centered */
+     display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    
+    /* Mengunci lingkaran agar tetap bulat sempurna */
+    flex-shrink: 0; 
+    
+    /* Mendorong container foto ke arah kiri secara presisi */
+    transform: translateX(-110px);
+  /* TAMBAHKAN DUA BARIS INI */
+    position: relative;
+    right: 60px;
+}
+
+/* Base style for the structural glow rings */
+.glow-ring {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: all 0.5s ease-in-out;
+}
+
+    .outer-ring {
+    width: 380px;
+    height: 380px;
+    border: 4px solid rgba(140, 255, 0, 0.15);
+    background: radial-gradient(circle, rgba(140, 255, 0, 0.05) 0%, transparent 70%);
+    box-shadow: 0 0 30px rgba(140, 255, 0, 0.2),
+                inset 0 0 30px rgba(140, 255, 0, 0.1);
+                
+}
+
+/* Inner Accent Ring Style & Neon Stroke */
+.inner-ring {
+    width: 350px;
+    height: 350px;
+    border: 8px solid var(--accent-color);
+    box-shadow: 0 0 25px var(--accent-color),
+                inset 0 0 25px var(--accent-color);
+    padding: 5px;
+    background-color: #080808;
+}
+
+.inner-ring img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    background-color: #111;
+}
+
+.btn-about {
+    display: inline-block;
+    cursor: pointer;
+    /* Tambahkan transition agar pergerakan efeknya mulus dan tidak kaku */
+    transition: all 0.3s ease; 
+}
+
+/* 2. Tambahkan efek saat kursor menyentuh tombol (:hover) */
+.btn-about:hover {
+    /* Membuat tombol sedikit membesar saat disentuh */
+    transform: scale(1.05); 
+    
+    /* Membuat warna hijau menyalanya sedikit lebih terang/pekat */
+    filter: brightness(1.2); 
+    
+    /* Menambahkan efek bayangan bersinar di bawah tombol */
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.6); 
+}
+
+/* 3. Tambahkan efek saat tombol diklik (:active) */
+.btn-about:active {
+    /* Memberikan efek seperti tombol benar-benar tertekan ke bawah */
+    transform: scale(0.98); 
+    box-shadow: 0 0 5px rgba(0, 255, 0, 0.4);
+}
